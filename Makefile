@@ -1,4 +1,4 @@
-CLANGPARAMS = -m32 -fno-use-cxa-atexit -nostdlib -fno-rtti -fno-exceptions 
+CLANGPARAMS = -m32 -fno-use-cxa-atexit -nostdlib -fno-rtti -fno-exceptions -std=c++17
 ASPARAMS = --32
 LDPARAMS = -melf_i386
 
@@ -31,3 +31,6 @@ kernel.iso: kernel.bin
 run: kernel.iso
 	qemu-system-x86_64 -hda build/kernel.iso -m 512
 
+
+clean:
+	rm -f *.o
